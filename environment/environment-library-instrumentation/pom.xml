@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+     <name>Android Environment Instrumentation Test</name>
+	<parent>
+		<groupId>org.bwgz.android</groupId>
+		<artifactId>environment</artifactId>
+		<version>1.0.0-BETA</version>
+		<relativePath>..</relativePath>
+	</parent>
+    
+    <artifactId>org-bwgz-android-environment-instrumentation</artifactId>
+    <packaging>apk</packaging>
+
+    <dependencies>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android-test</artifactId>
+			<version>${android-version}</version>
+        </dependency>
+		<dependency>
+            <groupId>org.bwgz.android</groupId>
+            <artifactId>org-bwgz-android-environment</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+ 		<dependency>
+			<groupId>com.actionbarsherlock</groupId>
+			<artifactId>actionbarsherlock</artifactId>
+			<version>${actionbarsherlock-version}</version>
+			<type>apklib</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<version>${android-maven-plugin-version}</version>
+                   <extensions>true</extensions>
+				<configuration>
+					<genDirectory>${project.basedir}/gen</genDirectory>
+					<sdk>
+						<platform>${android-platform}</platform>
+						<path>${android-sdk-path}</path>
+					</sdk>
+					<undeployBeforeDeploy>true</undeployBeforeDeploy>
+                    <test>
+                        <!--<skip>true|false|auto</skip>-->
+                        <!--<instrumentationPackage>packageName</instrumentationPackage>-->                              `
+                        <!--<instrumentationRunner>className</instrumentationRunner>-->
+                        <!--<debug>true|false</debug>-->
+                        <!--<coverage>true|false</coverage>-->
+                        <!--<logonly>true|false</logonly>  avd-->
+                        <!--<testsize>small|medium|large</testsize>-->
+                        <createReport>true</createReport>
+                        <!--<classes>-->
+                        <!--<class>your.package.name.YourTestClass</class>-->
+                        <!--</classes>-->
+                        <!--<packages>-->
+                        <!--<package>your.package.name</package>-->
+                        <!--</packages>-->
+                    </test>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${maven-eclipse-plugin-version}</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<projectnatures>
+						<projectnature>org.eclipse.jdt.core.javanature</projectnature>
+						<projectnature>com.android.ide.eclipse.adt.AndroidNature</projectnature>
+					</projectnatures>
+				  
+					<buildcommands>
+						<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+						<buildcommand>com.android.ide.eclipse.adt.ResourceManagerBuilder</buildcommand>
+						<buildcommand>com.android.ide.eclipse.adt.PreCompilerBuilder</buildcommand>
+						<buildcommand>com.android.ide.eclipse.adt.ApkBuilder</buildcommand>
+					</buildcommands>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

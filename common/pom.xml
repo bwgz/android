@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>Android Common Libraries</name>
+	
+	<parent>
+		<groupId>org.bwgz.android</groupId>
+		<artifactId>libraries</artifactId>
+		<version>1.0.0-BETA</version>
+		<relativePath>..</relativePath>
+	</parent>
+	
+	<artifactId>common</artifactId>
+	<packaging>pom</packaging>
+	
+	<dependencies>
+ 		<dependency>
+			<groupId>com.actionbarsherlock</groupId>
+			<artifactId>actionbarsherlock</artifactId>
+			<version>${actionbarsherlock-version}</version>
+			<scope>provided</scope>
+		</dependency>
+  	</dependencies>
+
+	<modules>
+		<module>common-library</module>
+	</modules>
+	
+</project>
