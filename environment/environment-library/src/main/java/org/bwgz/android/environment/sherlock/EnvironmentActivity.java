@@ -31,6 +31,7 @@ public class EnvironmentActivity extends ActivityListActivity {
 		list.add(new ActivityItem("Display", "General information about a display, such as its size, density, and font scaling", DisplayActivity.class));
 		list.add(new ActivityItem("Operating System", "Information about the current build, extracted from system properties", OperatingSystemActivity.class));
 		list.add(new ActivityItem("System", "System related information", SystemActivity.class));
+		list.add(new ActivityItem("Connectivity", "Status of network interfaces", ConnectivityActivity.class));
 	}
 	
 	@Override
@@ -38,6 +39,7 @@ public class EnvironmentActivity extends ActivityListActivity {
 		return list;
 	}
 
+	@Override
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
     }

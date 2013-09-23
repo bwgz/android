@@ -13,18 +13,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.bwgz.android.environment;
+package org.bwgz.android.environment.sherlock;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bwgz.android.common.TwoLineItem;
-import org.bwgz.android.common.TwoLineListActivity;
+import org.bwgz.android.common.sherlock.TwoLineListActivity;
+import org.bwgz.android.environment.ConnectivityTwoLineList;
 
 import android.os.Bundle;
 
-public class OperatingSystemActivity extends TwoLineListActivity {
-	private OperatingSystemTwoLineList list;
-
+public class ConnectivityActivity extends TwoLineListActivity {
+	private List<TwoLineItem> list = new ArrayList<TwoLineItem>();
+	
 	@Override
 	public List<TwoLineItem> getList() {
 		return list;
@@ -32,7 +34,7 @@ public class OperatingSystemActivity extends TwoLineListActivity {
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-		list = new OperatingSystemTwoLineList();
+		list = new ConnectivityTwoLineList(this);
 
 		super.onCreate(savedInstanceState);
     }

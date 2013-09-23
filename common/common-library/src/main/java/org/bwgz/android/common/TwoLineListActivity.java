@@ -62,6 +62,7 @@ public abstract class TwoLineListActivity extends Activity {
 	    };
 	}
 	
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
@@ -69,9 +70,16 @@ public abstract class TwoLineListActivity extends Activity {
         layout.setOrientation(LinearLayout.VERTICAL);
 
 		listView = new ListView(this);
-		listView.setAdapter(getAdapter());
         layout.addView(listView);
 
         setContentView(layout);
     }
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		listView.setAdapter(getAdapter());
+	}
+
 }

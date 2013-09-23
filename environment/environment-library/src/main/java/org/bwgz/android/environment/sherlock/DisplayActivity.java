@@ -31,6 +31,7 @@ public class DisplayActivity extends TwoLineListActivity {
 		return list;
 	}
 
+	@Override
     public void onCreate(Bundle savedInstanceState) {
 		list = new DisplayTwoLineList(getResources().getDisplayMetrics());
 				

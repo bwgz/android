@@ -15,6 +15,7 @@
  */
 package org.bwgz.android.environment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bwgz.android.common.TwoLineItem;
@@ -22,9 +23,9 @@ import org.bwgz.android.common.TwoLineListActivity;
 
 import android.os.Bundle;
 
-public class OperatingSystemActivity extends TwoLineListActivity {
-	private OperatingSystemTwoLineList list;
-
+public class NetworkInfoActivity extends TwoLineListActivity {
+	private List<TwoLineItem> list = new ArrayList<TwoLineItem>();
+	
 	@Override
 	public List<TwoLineItem> getList() {
 		return list;
@@ -32,7 +33,7 @@ public class OperatingSystemActivity extends TwoLineListActivity {
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-		list = new OperatingSystemTwoLineList();
+		list = new NetworkInfoTwoLineList(this, getIntent());
 
 		super.onCreate(savedInstanceState);
     }

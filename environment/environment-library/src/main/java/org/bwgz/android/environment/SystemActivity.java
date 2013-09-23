@@ -31,6 +31,7 @@ public class SystemActivity extends TwoLineListActivity {
 		return list;
 	}
 
+	@Override
     public void onCreate(Bundle savedInstanceState) {
 		list = new SystemTwoLineList();
 

@@ -15,17 +15,17 @@
  */
 package org.bwgz.android.common;
 
-import android.app.Activity;
+import android.content.Intent;
 
-public class ActivityItem implements TwoLineItem {
+public class IntentItem implements TwoLineItem {
     private String title;
     private String description;
-    private Class<? extends Activity> activity;
+    private Intent intent;
     
-    public ActivityItem(String title, String description, Class<? extends Activity> activity) {
+    public IntentItem(String title, String description, Intent intent) {
     	this.title = title;
     	this.description = description;
-    	this.activity = activity;
+    	this.setIntent(intent);
     }
 
 	public String getTitle() {
@@ -44,14 +44,14 @@ public class ActivityItem implements TwoLineItem {
 		this.description = description;
 	}
 
-	public Class<? extends Activity> getActivity() {
-		return activity;
+	public Intent getIntent() {
+		return intent;
 	}
 
-	public void setActivity(Class<? extends Activity> activity) {
-		this.activity = activity;
+	public void setIntent(Intent intent) {
+		this.intent = intent;
 	}
-
+	
 	@Override
 	public String getLineOne() {
 		return getTitle();
@@ -62,4 +62,5 @@ public class ActivityItem implements TwoLineItem {
 		return getDescription();
 	}
 }
+
 
