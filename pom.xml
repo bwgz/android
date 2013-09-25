@@ -7,7 +7,7 @@
 	
 	<groupId>org.bwgz.android</groupId>
 	<artifactId>libraries</artifactId>
-	<version>1.1.0-BETA</version>
+	<version>1.1.1-BETA</version>
 	<packaging>pom</packaging>
 	
 	<modules>
@@ -16,15 +16,17 @@
 	</modules>
 	
 	<properties>
+		<android-version>4.1.1.4</android-version>
 		<java-version>1.6</java-version>
-		
-		<android-version>4.0.1.2</android-version>
-		<android-support-v4-version>r13</android-support-v4-version>
 		
 		<maven-eclipse-plugin-version>2.9</maven-eclipse-plugin-version>
 		<versions-maven-plugin-version>2.0</versions-maven-plugin-version>
+		<android-maven-plugin-version>3.6.1</android-maven-plugin-version>
 		
-		<actionbarsherlock-version>4.3.0</actionbarsherlock-version>
+		<android-platform>18</android-platform>
+		<android-sdk-path>${android.sdk.path}</android-sdk-path>
+		
+		<actionbarsherlock-version>4.4.0</actionbarsherlock-version>
 	</properties>
 	
     <dependencies>
@@ -34,25 +36,31 @@
             <version>${android-version}</version>
             <scope>provided</scope>
         </dependency>
+ 		<dependency>
+			<groupId>com.actionbarsherlock</groupId>
+			<artifactId>actionbarsherlock</artifactId>
+			<version>${actionbarsherlock-version}</version>
+			<scope>provided</scope>
+		</dependency>
   	</dependencies>
 
 	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>versions-maven-plugin</artifactId>
-					<version>${versions-maven-plugin-version}</version>
-					<configuration>
-						<allowSnapshots>true</allowSnapshots>
-					</configuration>
-				</plugin>
-				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
 						<source>${java-version}</source>
 						<target>${java-version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>${versions-maven-plugin-version}</version>
+					<configuration>
+						<allowSnapshots>true</allowSnapshots>
 					</configuration>
 				</plugin>
 			</plugins>

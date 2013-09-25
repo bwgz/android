@@ -30,7 +30,7 @@ public class EnvironmentActivityTest extends ActivityInstrumentationTestCase2<En
 	  /*
 	   * request focus for the list, so that the test can send key events to it
 	   * This request must be run on the UI thread. To do this, use the runOnUiThread method
-	   * and pass it a Runnable that contains a call to requestFocus on the Spinner.
+	   * and pass it a Runnable that contains a call to requestFocus on the view.
 	   */
 		activity.runOnUiThread(new Runnable() {
 			public void run() {

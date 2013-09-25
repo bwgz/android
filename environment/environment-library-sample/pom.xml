@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.bwgz.android</groupId>
 		<artifactId>environment</artifactId>
-		<version>1.1.0-BETA</version>
+		<version>1.1.1-BETA</version>
 		<relativePath>..</relativePath>
 	</parent>
 	
@@ -19,12 +19,6 @@
             <artifactId>org-bwgz-android-environment</artifactId>
             <version>${project.version}</version>
         </dependency>
- 		<dependency>
-			<groupId>com.actionbarsherlock</groupId>
-			<artifactId>actionbarsherlock</artifactId>
-			<version>${actionbarsherlock-version}</version>
-            <type>apklib</type>
-		</dependency>
 	</dependencies>
 
 	<build>

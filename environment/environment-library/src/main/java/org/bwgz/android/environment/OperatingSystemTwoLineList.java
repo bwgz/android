@@ -25,8 +25,6 @@ import android.os.Build;
 public class OperatingSystemTwoLineList extends ArrayList<TwoLineItem> {
 	private static final long serialVersionUID = -8754999754851526606L;
 	
-	private static int ICE_CREAM_SANDWICH_MR1 = 15;
-	private static int JELLY_BEAN = 16;
 	private static int JELLY_BEAN_MR1 = 17;
 	
 	private static final HashMap<Integer, String> map = new HashMap<Integer, String>();
@@ -46,8 +44,8 @@ public class OperatingSystemTwoLineList extends ArrayList<TwoLineItem> {
 		map.put(Integer.valueOf(Build.VERSION_CODES.HONEYCOMB_MR1), "Honeycomb MR1");
 		map.put(Integer.valueOf(Build.VERSION_CODES.HONEYCOMB_MR2), "Honeycomb MR2");
 		map.put(Integer.valueOf(Build.VERSION_CODES.ICE_CREAM_SANDWICH), "Ice Cream Sandwich");
-		map.put(Integer.valueOf(ICE_CREAM_SANDWICH_MR1), "Ice Cream Sandwich MR1");
-		map.put(Integer.valueOf(JELLY_BEAN), "Jelly Bean");
+		map.put(Integer.valueOf(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1), "Ice Cream Sandwich MR1");
+		map.put(Integer.valueOf(Build.VERSION_CODES.JELLY_BEAN), "Jelly Bean");
 		map.put(Integer.valueOf(JELLY_BEAN_MR1), "Jelly Bean MR 1");
 	}
 

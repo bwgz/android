@@ -33,7 +33,7 @@ public class ConnectivityActivity extends IntentListActivity {
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-		list = new ConnectivityTwoLineList(this);
+		list = new ConnectivityTwoLineList(this, NetworkInfoActivity.class);
 
 		super.onCreate(savedInstanceState);
     }

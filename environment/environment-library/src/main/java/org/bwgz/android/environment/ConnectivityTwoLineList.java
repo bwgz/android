@@ -29,16 +29,16 @@ import android.net.NetworkInfo;
 public class ConnectivityTwoLineList extends ArrayList<TwoLineItem> {
 	private static final long serialVersionUID = 8136275720486127251L;
 
-	public ConnectivityTwoLineList(Activity activity) {
+	public ConnectivityTwoLineList(Activity activity, Class<?> clazz) {
 		super();
 		
 		ConnectivityManager manager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
 		
 		for (NetworkInfo info : manager.getAllNetworkInfo()) {
-		    Intent intent = new Intent(activity, NetworkInfoActivity.class);
+		    Intent intent = new Intent(activity, clazz);
 		    intent.putExtra(NetworkInfoTwoLineList.EXTRA_TYPE_NAME, info.getTypeName());
 		    
-			add(new IntentItem(info.getTypeName(), info.getSubtypeName(), intent));
+			add(new IntentItem(info.getTypeName(), info.toString(), intent));
 		}
 	}
 }
